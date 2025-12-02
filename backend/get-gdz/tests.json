@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "Get math tasks for class 8",
+      "method": "GET",
+      "path": "/?subject=math&class=8",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "tasks": "array",
+        "total": "number",
+        "subject": "math",
+        "class": "8"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get algebra tasks for class 9",
+      "method": "GET",
+      "path": "/?subject=algebra&class=9",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "tasks": "array",
+        "total": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing parameters",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
